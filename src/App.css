@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(214, 206, 194);
+  overflow: hidden;
+}
+
+.bmicalculator {
+  width: 800px;
+  max-width: 90%; /* Ensures responsiveness */
+  height: 500px;
+  max-height: 90%; /* Ensures responsiveness */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.box {
+  width: 350px;
+  background-image: url("assets/bmi.avif");
+  background-size: cover; /* Ensures the image scales properly */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px 0 0 8px; /* Rounds left corners */
+}
+
+.data {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-size: 24px; /* Larger for better visibility */
+  color: rgb(177, 111, 31);
+  text-align: center;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #888;
+  font-size: 14px; /* Smaller for better spacing */
+}
+
+input {
+  width: 100%;
+  padding: 8px; /* Slightly reduced for better fit */
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: rgb(184, 112, 24);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px; /* Adjusted for better spacing */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3c4d96;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid rgb(184, 112, 24);
+  border-radius: 4px;
+  background-color: #fff5e6;
+}
+
+.result p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 16px; /* Better visibility */
+}
+
+.result p:first-child {
+  color: rgb(184, 112, 24);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.underweight {
+  color: #ff9800;
+}
+
+.status.normalweight {
+  color: #4caf50;
+}
+
+.status.overweight {
+  color: #ff5722;
+}
+
+.status.obese {
+  color: #f44336;
+}
+
+/* Animated results */
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.motivational-message {
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BMI History */
+.history {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.history h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 18px;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  max-height: 100px; /* Prevents overflow in case of many items */
+  overflow-y: auto; /* Enables scrolling for long history */
+}
+
+.history li {
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .bmicalculator {
+    flex-direction: column; /* Stacks the elements vertically */
+    height: auto;
+  }
+
+  .box {
+    width: 100%; /* Full width for mobile */
+    height: 200px; /* Adjusted height */
+    border-radius: 8px 8px 0 0; /* Rounds top corners */
+  }
+
+  .data {
+    padding: 15px;
+  }
+}
+.reset-button{
+  margin-left: 5px;
+}
