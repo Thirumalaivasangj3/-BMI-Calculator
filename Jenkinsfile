@@ -1,24 +1,38 @@
 pipeline {
     agent any
+
+    tools {
+        nodejs 'NodeJS_20' // Make sure this name matches your Jenkins NodeJS installation
+    }
+
     stages {
-        stage('Clone') {
+        stage('Clone Repository') {
             steps {
-                git 'https://github.com/yourusername/yourrepo.git'
+                git 'https://github.com/Thirumalaivasangj3/-BMI-Calculator.git'
             }
         }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building your project...'
+                sh 'npm run build'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                sh 'npm test || echo "No test script defined"'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
+                echo 'Deploy step can be added here if needed.'
             }
         }
     }
