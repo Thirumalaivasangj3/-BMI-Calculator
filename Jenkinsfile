@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS_20' // Make sure this name matches your Jenkins NodeJS installation
-    }
-
     stages {
         stage('Clone Repository') {
             steps {
